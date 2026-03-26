@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Breeds</title>
+</head>
+<body>
+    <h1>Hello {{ stud }}!</h1>
+    <h2>Dog Breeds List:</h2>
+    <ul>
+        {% for breed, subbreeds in breeds.items() %}
+            <li>
+                {{ breed }}
+                {% if subbreeds and subbreeds|length > 0 %}
+                    <ul>
+                        {% for sub in subbreeds %}
+                            <li>{{ sub }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
